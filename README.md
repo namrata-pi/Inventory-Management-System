@@ -22,7 +22,6 @@ This project was developed as part of a case-study for a manufacturing firm that
 - Update existing items  
 - Delete items  
 - View all items in a modern, clean table  
-- Automatic timestamps (`last_updated`)
 
 ### 🎯 **Filtering System**
 - Filter by Item Name  
