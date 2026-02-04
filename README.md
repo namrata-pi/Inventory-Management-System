@@ -55,7 +55,7 @@ inventory-system/
 ├── backend/
 │   ├── main.py
 │   ├── database.py
-│   ├── models.py
+│   ├── datamodel.py
 │   ├── routes.py
 │   ├── schemas.py
 │   └── inventory.db
