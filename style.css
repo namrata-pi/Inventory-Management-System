@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#summary-and-chart {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#summary-box {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 360px;   
+}
+
+#stock-status-box {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 315px;  
+    text-align: center;
+}
+
+
+
+
+#summary-cards {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.summary-card {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.summary-card p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#category-bar-box {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    width: 360px;
+    text-align: center;
+}
+
+
+#category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.category-chip {
+    background: #e0e0e0;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #333;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.low-stock {
+    background-color: #ffcccc; 
+}
+
+#add-item-form select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+
+form input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+
+#inventory-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;    
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+}
+
+#inventory-table thead th {
+    background: #4C6EF5;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#inventory-table tbody tr {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#inventory-table tbody td {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+#inventory-table tbody tr td:first-child {
+    border-left: 6px solid transparent;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#inventory-table tbody tr td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+#inventory-table tbody tr:hover {
+    background-color: #f3f6ff;
+    transition: 0.2s;
+}
+
+
+.low-stock {
+    background-color: #ffe5e5 !important;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.15);
+}
+
+
+.edit-btn, .delete-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #FFB74D;
+    color: white;
+    margin-right: 6px;
+}
+
+.delete-btn {
+    background: #E57373;
+    color: white;
+}
+
+
+#filter-panel {
+    width: 350px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.filter-actions button {
+    border: none;
+    background: none;
+    color: #ff9900;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#remove-filter {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #d9534f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#dashboard-container {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+
+
+
+

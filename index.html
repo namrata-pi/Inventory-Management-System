@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  </head>
+  <body>
+    <h1>Inventory Management System</h1>
+    <div id="dashboard-container">
+      <!-- <div id="summary-box">
+        <h2>Inventory Summary</h2> -->
+
+      <!-- <p>Total Items: <span id="total-items">0</span></p>
+        <p>Total Quantity: <span id="total-quantity">0</span></p>
+        <p>Low Stock Items: <span id="low-stock-count">0</span></p>
+
+        <h3>Category Breakdown</h3>
+        <ul id="category-summary"></ul>
+
+        <h3>Most Recently Updated Item</h3>
+        <p id="last-updated-item">No updates yet</p>
+      </div>
+
+      <div id="stock-status-box">
+        <h2>Stock Status Breakdown</h2>
+        <canvas id="stockStatusChart" width="300" height="300"></canvas>
+      </div> -->
+      <!-- <div id="summary-box">
+        <h2>Inventory Summary</h2>
+
+        <div id="summary-cards">
+          <div class="summary-card">
+            <h3>Total Items</h3>
+            <p id="total-items">0</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Total Quantity</h3>
+            <p id="total-quantity">0</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Low Stock</h3>
+            <p id="low-stock-count">0</p>
+          </div>
+        </div>
+
+
+
+
+      <div id="summary-and-chart">
+        <!-- LEFT SIDE: Inventory Summary -->
+        <div id="summary-box">
+          <h2>Inventory Summary</h2>
+
+          <div id="summary-cards">
+            <div class="summary-card">
+              <h3>Total Items</h3>
+              <p id="total-items">0</p>
+            </div>
+
+            <div class="summary-card">
+              <h3>Total Quantity</h3>
+              <p id="total-quantity">0</p>
+            </div>
+
+            <div class="summary-card">
+              <h3>Low Stock</h3>
+              <p id="low-stock-count">0</p>
+            </div>
+          </div>
+
+          <h3>Category Breakdown</h3>
+          <div id="category-chips"></div>
+        </div>
+
+        <!-- RIGHT SIDE: PIE CHART -->
+        <div id="stock-status-box">
+          <h2>Stock Status Breakdown</h2>
+          <canvas id="stockStatusChart" width="250" height="250"></canvas>
+        </div>
+
+        <div id="category-bar-box">
+      <h2>Category Wise Stock</h2>
+      <canvas id="categoryBarChart" width="250" height="250"></canvas>
+    </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <h2>Add New Item</h2>
+    <form id="add-item-form">
+      
+       <select id="item_name" required>
+    <option value="">Select Item</option>
+    <option value="Steel Bolt M8">Steel Bolt M8</option>
+    <option value="Steel Nut M8">Steel Nut M8</option>
+    <option value="Gear 40T">Gear 40T</option>
+    <option value="Electric Motor X200">Electric Motor X200</option>
+    <option value="Conveyor Belt 2m">Conveyor Belt 2m</option>
+    <option value="Hydraulic Fluid 55gal">Hydraulic Fluid 55gal</option>
+    <option value="Packaging Box (Large)">Packaging Box (Large)</option>
+    <option value="Welding Rods 5mm">Welding Rods 5mm</option>
+    <option value="Aluminum Sheet 4mm">Aluminum Sheet 4mm</option>
+    <option value="Pneumatic Cylinder 5in">Pneumatic Cylinder 5in</option>
+</select>
+
+      
+      <select id="category" required>
+    <option value="">Category</option>
+    <option value="Hardware">Hardware</option>
+    <option value="Mechanical">Mechanical</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Equipment">Equipment</option>
+    <option value="Consumables">Consumables</option>
+    <option value="Packaging">Packaging</option>
+    <option value="Materials">Materials</option>
+    
+</select>
+      <input
+        type="number"
+        id="quantity_in_stock"
+        placeholder="Quantity"
+        required
+      />
+      <input
+        type="number"
+        id="reorder_level"
+        placeholder="Reorder Level"
+        required
+      />
+      <!-- <input type="text" id="supplier" placeholder="Supplier" required /> -->
+       <select id="supplier" required>
+    <option value="">Supplier</option>
+    <option value="Acme Industrial">Acme Industrial</option>
+    <option value="GearWorks Co.">GearWorks Co.</option>
+    <option value="MotorCorp Ltd">MotorCorp Ltd</option>
+    <option value="ConveyCo Supplies">ConveyCo Supplies</option>
+    <option value="HydroOil Inc.">HydroOil Inc.</option>
+    <option value="PackIt">PackIt</option>
+    <option value="WeldPro">WeldPro</option>
+    <option value="MetalWorks">MetalWorks</option>
+    <option value="PneumaTech">PneumaTech</option>
+    </select>
+
+      <button type="submit">Add Item</button>
+    </form>
+
+    <div id="edit-box" style="display: none; margin-top: 20px">
+      <h3>Edit Item</h3>
+      <form id="edit-item-form">
+        <input type="hidden" id="edit-id" />
+
+        <input
+          type="text"
+          id="edit-item_name"
+          placeholder="Item Name"
+          required
+        />
+        <input type="text" id="edit-category" placeholder="Category" required />
+        <input
+          type="number"
+          id="edit-quantity_in_stock"
+          placeholder="Quantity"
+          required
+        />
+        <input
+          type="number"
+          id="edit-reorder_level"
+          placeholder="Reorder Level"
+          required
+        />
+        <input type="text" id="edit-supplier" placeholder="Supplier" required />
+
+        <button type="submit">Update Item</button>
+        <button type="button" onclick="closeEditForm()">Cancel</button>
+      </form>
+    </div>
+
+    <hr />
+
+    <h2>Filter Inventory</h2>
+    <div id="filter-panel">
+      <div class="filter-header">
+        <span>Filters</span>
+        <div class="filter-actions">
+          <button onclick="expandFilter()">Expand</button>
+          <button onclick="resetFilter()">Reset</button>
+        </div>
+      </div>
+
+      <div id="filter-row">
+        <div class="filter-block">
+          <select
+            id="filter-type"
+            class="filter-select"
+            onchange="loadFilterValues()"
+          >
+            <option value="">Sort by</option>
+            <option value="item_name">Item Name</option>
+            <option value="category">Category</option>
+            <option value="supplier">Supplier</option>
+            <option value="status_in">In Stock</option>
+            <option value="status_low">Low Stock</option>
+            <option value="status_out">Out of Stock</option>
+          </select>
+
+          <select
+            id="filter-value"
+            class="filter-select"
+            onchange="applyAdvancedFilter()"
+          >
+            <option value="">Select Value</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <h2>Inventory List</h2>
+    <!-- changed -->
+
+    <table id="inventory-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+
+          <th>Reorder Level</th>
+          <th>Supplier</th>
+          <th>Last Updated</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="inventory-body">
+        <!-- Filled by JS -->
+      </tbody>
+    </table>
+
+    <script src="main.js"></script>
+  </body>
+</html>
