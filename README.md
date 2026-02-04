@@ -4,7 +4,7 @@
 # 📦 Inventory Management System (FastAPI + HTML/CSS/JS)
 
 A complete full-stack **Inventory Management System** built using  
-**FastAPI (REST API)**, **SQLite**, **HTML/CSS/JavaScript**, and **Chart.js**.
+**FastAPI (REST API)**, **SQLite**, **HTML/CSS/JavaScript**.
 
 This project was developed as part of a case-study for a manufacturing firm that needed:
 - A simple interface to manage raw materials & finished goods  
@@ -49,6 +49,29 @@ This project was developed as part of a case-study for a manufacturing firm that
 
 ---
 
+## 🏛️ Architecture Overview
+
+```
+┌──────────────────────────────┐
+│          Frontend            │
+│   HTML • CSS • JavaScript  │
+└──────────────┬───────────────┘
+               │ Fetch API
+               ▼
+┌──────────────────────────────┐
+│       FastAPI Backend        │
+│ CRUD + Summary + Alerts API  │
+└──────────────┬───────────────┘
+               │ SQLAlchemy ORM
+               ▼
+┌──────────────────────────────┐
+│          SQLite DB           │
+└──────────────────────────────┘
+
+```
+
+
+
 ## 📁 Folder Structure
 ```
 inventory-system/
@@ -90,7 +113,28 @@ uvicorn main:app --reload
 1. Go to the `frontend/` folder  
 2. Open `index.html` directly in the browser  
 3. Ensure backend is running in background  
-4. UI will auto-connect to API  
+4. UI will auto-connect to API
+
+
+## 🔗 API Endpoints
+
+### 📥 Add New Item
+`POST /inventory`
+
+### 📄 Get All Items  
+`GET /inventory`
+
+### 📌 Get Item by ID  
+`GET /inventory/{id}`
+
+### ✏️ Update Item  
+`PUT /inventory/{id}`
+
+### ❌ Delete Item  
+`DELETE /inventory/{id}`
+
+### 📊 Summary + Analytics  
+`GET /inventory/summary`
 
 
 
