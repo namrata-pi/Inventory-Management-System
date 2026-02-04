@@ -39,7 +39,7 @@ This project was developed as part of a case-study for a manufacturing firm that
   - Total Quantity  
   - Low Stock Count  
 - **Category Chips:** compact representation of category distribution  
-- **Last Updated Item** info box
+
 
 ### ⚡ **UI Enhancements**
 - Beautiful modern table (hover effects, shadows, rounded corners)  
@@ -72,10 +72,10 @@ inventory-system/
 
 ## ⚙️ **How to Run the Backend (FastAPI)**
 
-### 1️⃣ Create virtual environment (optional)
-### Install dependencies
+###  Install dependencies
+```bash
 pip install fastapi uvicorn sqlalchemy pydantic
-
+```
 ## Running the Project
 
 ### Backend
@@ -85,8 +85,13 @@ To start the backend server, run:
 uvicorn main:app --reload
 ```
 
-### To run the frontend
-Just go live on `index.html`
+## 🖥️ **How to Run the Frontend**
+
+1. Go to the `frontend/` folder  
+2. Open `index.html` directly in the browser  
+3. Ensure backend is running in background  
+4. UI will auto-connect to API  
+
 
 
 
