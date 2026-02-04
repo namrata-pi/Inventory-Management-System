@@ -49,22 +49,47 @@ This project was developed as part of a case-study for a manufacturing firm that
 
 ---
 
-## 🏗️ **Architecture Overview**
-┌───────────────────────────────┐
-│          Frontend UI          │
-│  (HTML • CSS • JavaScript)    │
-└───────────────┬───────────────┘
-                │ Fetch API (AJAX)
-                ▼
-┌───────────────────────────────┐
-│        FastAPI Backend        │
-│   (RESTful API Endpoints)     │
-└───────────────┬───────────────┘
-                │ SQLAlchemy ORM
-                ▼
-┌───────────────────────────────┐
-│        SQLite Database        │
-│ (Persistent Inventory Storage)│
-└───────────────────────────────┘
+## 📁 Folder Structure
+```
+inventory-system/
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── routes.py
+│   ├── schemas.py
+│   └── inventory.db
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── main.js
+└── README.md
+```
+
+
+
+---
+
+## ⚙️ **How to Run the Backend (FastAPI)**
+
+### 1️⃣ Create virtual environment (optional)
+### Install dependencies
+pip install fastapi uvicorn sqlalchemy pydantic
+
+## Running the Project
+
+### Backend
+To start the backend server, run:
+
+```bash
+uvicorn main:app --reload
+```
+
+### To run the frontend
+Just go live on `index.html`
+
+
+
+
 
 
